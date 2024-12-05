@@ -43,10 +43,4 @@ contract FirstSmartContract {
     function getOwner() public view returns (address) {
         return contractOwner;
     }
-
-
-    function getUserByUsername(string memory username) public view returns (User memory) {
-
-    }
-
 }
