@@ -30,6 +30,18 @@ export const getOrDeployContractInstances = async ({
   await simpleStorageContract.waitForDeployment();
   const simpleStorageContractAddress = await simpleStorageContract.getAddress();
 
+  const FirstSmartContract = await ethers.getContractFactory(
+    "FirstSmartContract"
+  );
+  const firstSmartContract = await FirstSmartContract.deploy({
+    from: owner.address,
+  });
+  await firstSmartContract.waitForDeployment();
+  console.log(
+    "FirstSmartContract deployed at",
+    await firstSmartContract.getAddress()
+  );
+
   printLogs &&
     console.log(
       `SimpleStorage contract deployed at ${simpleStorageContractAddress}`
