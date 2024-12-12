@@ -30,10 +30,10 @@ export const getOrDeployContractInstances = async ({
   await simpleStorageContract.waitForDeployment();
   const simpleStorageContractAddress = await simpleStorageContract.getAddress();
 
-  const FirstSmartContract = await ethers.getContractFactory(
-    "FirstSmartContract"
+  const CompletedContract = await ethers.getContractFactory(
+    "CompletedContract"
   );
-  const firstSmartContract = await FirstSmartContract.deploy({
+  const firstSmartContract = await CompletedContract.deploy({
     from: owner.address,
   });
   await firstSmartContract.waitForDeployment();
